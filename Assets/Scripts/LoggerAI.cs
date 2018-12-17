@@ -52,7 +52,7 @@ public class LoggerAI : MonoBehaviour
     void chopWood()
     {
         //cost 4
-        myTarget = GameObject.FindGameObjectWithTag("Mine").transform.position;
+        myTarget = GameObject.FindGameObjectWithTag("Forrest").transform.position;
 
         transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
 
@@ -106,7 +106,7 @@ public class LoggerAI : MonoBehaviour
     void gatherWood()
     {
         //cost 8
-        myTarget = GameObject.FindGameObjectWithTag("Rocks").transform.position;
+        myTarget = GameObject.FindGameObjectWithTag("Wood").transform.position;
 
         transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
         
