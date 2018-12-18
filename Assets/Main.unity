@@ -1077,6 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a96c874d42f7f4dbc8dbfe026b8622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1 &960556649
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,6 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0669014eb2ab34fb4215b94ea8bbfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1001 &1139158944
 Prefab:
   m_ObjectHideFlags: 0
@@ -1973,7 +1975,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 093503452ad14a7468ce759db574828f, type: 3}
       propertyPath: m_Name
-      value: fi_vil_forge_forgebase (1)
+      value: MetalBin
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 093503452ad14a7468ce759db574828f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2035,7 +2037,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 093503452ad14a7468ce759db574828f, type: 3}
       propertyPath: m_Name
-      value: fi_vil_forge_forgebase (2)
+      value: ToolBin
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 093503452ad14a7468ce759db574828f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2444,6 +2446,10 @@ Prefab:
       propertyPath: m_TagString
       value: Forge
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e73928dcf98647640a4d8bc67715e98f, type: 3}
+      propertyPath: m_Name
+      value: Forge
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e73928dcf98647640a4d8bc67715e98f, type: 3}
   m_IsPrefabAsset: 0
@@ -2710,6 +2716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a96c874d42f7f4dbc8dbfe026b8622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1001 &2033937497
 Prefab:
   m_ObjectHideFlags: 0
@@ -2968,6 +2975,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: df00cbc8180dd724bb7cfaeee31a46dc, type: 2}
+    - target: {fileID: 100000, guid: 093503452ad14a7468ce759db574828f, type: 3}
+      propertyPath: m_Name
+      value: WoodBin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 093503452ad14a7468ce759db574828f, type: 3}
   m_IsPrefabAsset: 0

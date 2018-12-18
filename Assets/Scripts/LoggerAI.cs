@@ -7,6 +7,9 @@ public class LoggerAI : MonoBehaviour
     bool hasTool = false;
     bool hasOre = false;
 
+
+    public int speed;
+
     int toolCount;
     int toolLife = 0;
 
@@ -15,8 +18,6 @@ public class LoggerAI : MonoBehaviour
     int trial = 0;
 
     Vector3 myTarget;
-
-    GameObject Manager = GameObject.Find("GameManager");
 
     SimulationManager simMan;
 
@@ -27,6 +28,8 @@ public class LoggerAI : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        GameObject Manager = GameObject.Find("GameManager");
+
         simMan = Manager.GetComponent<SimulationManager>();
 
         optionsList.Add(getTool);
@@ -54,7 +57,7 @@ public class LoggerAI : MonoBehaviour
         //cost 4
         myTarget = GameObject.FindGameObjectWithTag("Forrest").transform.position;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
         if (transform.position == myTarget)
         {
@@ -72,9 +75,9 @@ public class LoggerAI : MonoBehaviour
             while (transform.position != myTarget)
             {
                 //T possibly replace coordinates with a more advanced path finding idea
-                myTarget = GameObject.FindGameObjectWithTag("Forge").transform.position;
+                myTarget = GameObject.FindGameObjectWithTag("ToolBin").transform.position;
 
-                transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+                transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
                 //after Ai reaches target
                 if (transform.position == myTarget)
@@ -108,7 +111,7 @@ public class LoggerAI : MonoBehaviour
         //cost 8
         myTarget = GameObject.FindGameObjectWithTag("Wood").transform.position;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
         
         //ran when AI reachs target
         if (transform.position == myTarget)
@@ -122,9 +125,9 @@ public class LoggerAI : MonoBehaviour
     void dropOffWood()
     {
         //cost 2
-        myTarget = GameObject.FindGameObjectWithTag("Forge").transform.position;
+        myTarget = GameObject.FindGameObjectWithTag("WoodBin").transform.position;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
         //ran when AI reachs target position
         if (transform.position == myTarget)

@@ -11,13 +11,13 @@ public class MinerAI : MonoBehaviour
     int toolCount;
     int toolLife = 0;
 
+    public int speed;
+
     float cost;
 
     int trial = 0;
 
     Vector3 myTarget;
-
-    GameObject Manager = GameObject.Find("GameManager");
 
     SimulationManager simMan;
 
@@ -28,6 +28,8 @@ public class MinerAI : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+        GameObject Manager = GameObject.Find("GameManager");
+
         simMan = Manager.GetComponent<SimulationManager>();
 
         optionsList.Add(getTool);
@@ -59,10 +61,11 @@ public class MinerAI : MonoBehaviour
             {
 
                 //T possibly replace coordinates witha more advanced path finding idea
-                myTarget = GameObject.FindGameObjectWithTag("Forge").transform.position;
+                myTarget = GameObject.FindGameObjectWithTag("ToolBin").transform.position;
                 //myTarget.x -= 3; myTarget.z -= 3;
 
-                transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+
+                transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
                 //ran after AI reachs target position
                 if (transform.position == myTarget)
@@ -97,7 +100,7 @@ public class MinerAI : MonoBehaviour
         myTarget = GameObject.FindGameObjectWithTag("Mine").transform.position;
         //myTarget.x -= 3; myTarget.z -= 3;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
         //ran after AI reachs target position 
         if (transform.position == myTarget)
@@ -113,7 +116,7 @@ public class MinerAI : MonoBehaviour
         myTarget = GameObject.FindGameObjectWithTag("Rocks").transform.position;
         //myTarget.x -= 3; myTarget.z -= 3;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
         //ran after AI reachs target position
         if (transform.position == myTarget)
@@ -126,10 +129,10 @@ public class MinerAI : MonoBehaviour
 
     void dropOffOre()
     {
-        myTarget = GameObject.FindGameObjectWithTag("Forge").transform.position;
+        myTarget = GameObject.FindGameObjectWithTag("MetalBin").transform.position;
         //myTarget.x -= 3; myTarget.z -= 3;
 
-        transform.position = Vector3.MoveTowards(transform.position, myTarget, 2);
+        transform.position = Vector3.MoveTowards(transform.position, myTarget, speed);
 
         //ran after AI reachs target position
         if (transform.position == myTarget)
